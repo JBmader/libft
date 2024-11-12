@@ -6,7 +6,7 @@
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:11:38 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/08 20:23:46 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/12 19:15:47 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ static size_t	count_words(const char *s, char c)
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i] && s[i] != c)
-		{
 			cpt++;
-			i++;
-		}
 		while (s[i] && s[i] != c)
 			i++;
 	}
@@ -67,7 +64,7 @@ char	**ft_split(char const *s, char c)
 		if (start < i)
 			res[global_i] = ft_substr(s, start, i - start);
 		if (!res[global_i++] && start < i)
-			return (tab_free(res, global_i - 1));
+			return (tab_free(res, global_i - 2));
 	}
 	res[global_i] = NULL;
 	return (res);

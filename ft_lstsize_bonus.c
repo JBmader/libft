@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 13:01:26 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/12 18:22:24 by jmader           ###   ########.fr       */
+/*   Created: 2024/11/12 20:34:10 by jmader            #+#    #+#             */
+/*   Updated: 2024/11/12 22:03:04 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+	int		cpt;
+	t_list	*tmp;
+
+	cpt = 0;
+	tmp = lst;
+	while (tmp)
+	{
+		cpt++;
+		tmp = tmp->next;
+	}
+	return (cpt);
 }

@@ -6,7 +6,7 @@
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:54 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/08 16:08:43 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/12 15:33:24 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		i = -1;
-		while (i++ < n)
+		i = 0;
+		while (i < n)
+		{
 			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dest);
 }

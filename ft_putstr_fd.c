@@ -6,7 +6,7 @@
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:09:22 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/12 13:41:15 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:25:46 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	len;
 	int		i;
 
+	if (fd < 0 || !s)
+		return ;
 	len = ft_strlen(s);
 	i = 0;
 	while (s[i])
