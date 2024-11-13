@@ -6,7 +6,7 @@
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:11:38 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/12 19:15:47 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/13 13:34:04 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (start < i)
 			res[global_i] = ft_substr(s, start, i - start);
-		if (!res[global_i++] && start < i)
+		if (start < i && !res[global_i++])
 			return (tab_free(res, global_i - 2));
 	}
 	res[global_i] = NULL;

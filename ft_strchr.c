@@ -6,7 +6,7 @@
 /*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 13:47:35 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/12 19:24:36 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/13 13:33:10 by jmader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (char)c)
+		if ((unsigned char)s[i] == (char)c)
 			return ((char *)&s[i]);
 	i++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)&s[i]);
-	return (0);
+	return (NULL);
 }

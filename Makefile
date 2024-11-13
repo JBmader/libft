@@ -16,9 +16,6 @@ ft_lstmap_bonus.c
 OBJ = ${FILE:.c=.o}
 OBJBUS = ${FILEBUS:.c=.o}
 
-OBJ = ${FILE:.c=.o}
-OBJBUS = ${FILEBUS:.c=.o}
-
 all:${NAME}
 
 ${NAME}:${OBJ}
