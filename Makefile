@@ -1,8 +1,9 @@
 NAME = libft.a
 
 CC = cc
-FLAG = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
+# Fichiers sources
 FILE = ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_striteri.c \
 ft_strmapi.c ft_itoa.c ft_split.c ft_strtrim.c ft_strjoin.c ft_substr.c ft_memset.c \
 ft_strdup.c ft_calloc.c ft_atoi.c ft_strnstr.c ft_memcmp.c ft_memchr.c ft_strncmp.c \
@@ -13,25 +14,34 @@ FILEBUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlas
 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
 ft_lstmap_bonus.c
 
+# Objets correspondants
 OBJ = ${FILE:.c=.o}
 OBJBUS = ${FILEBUS:.c=.o}
 
-all:${NAME}
+# Règle par défaut
+all: $(NAME)
 
-${NAME}:${OBJ}
-		ar crs ${NAME} ${OBJ}
-%.o:%.c
-		${CC} ${FLAG} -c $<
+# Construction de la bibliothèque
+$(NAME): $(OBJ) $(OBJBUS)
+	ar rcs $@ $^
 
-bonus:${OBJBUS}
-		ar crs ${NAME} ${OBJ} ${OBJBUS}
-%.o:%.c
-		${CC} ${FLAG} -c $<
+# Compilation des fichiers sources
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
+# Règle pour la partie bonus
+bonus: $(OBJBUS)
+	ar rcs $(NAME) $(OBJBUS)
+
+# Nettoyage des fichiers objets
 clean:
-		rm -f ${OBJ} ${OBJBUS}
-fclean:clean
-		rm -f ${NAME}
-re:fclean all
+	rm -f $(OBJ) $(OBJBUS)
+
+# Nettoyage complet (objets et bibliothèque)
+fclean: clean
+	rm -f $(NAME)
+
+# Récompilation
+re: fclean all
 
 .PHONY: all bonus clean fclean re
