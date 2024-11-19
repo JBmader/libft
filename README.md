@@ -34,5 +34,5 @@ make fclean
 make re
 ```
 
-## Auteur
+
 Projet réalisé par JBmader.
