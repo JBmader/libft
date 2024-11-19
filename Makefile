@@ -24,7 +24,7 @@ ${NAME}:${OBJ}
 		${CC} ${FLAG} -c $<
 
 bonus:${OBJBUS}
-		ar crs ${NAME} ${OBJBUS}
+		ar crs ${NAME} ${OBJ} ${OBJBUS}
 %.o:%.c
 		${CC} ${FLAG} -c $<
 
