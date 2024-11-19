@@ -29,10 +29,6 @@ $(NAME): $(OBJ) $(OBJBUS)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-# Règle pour la partie bonus
-bonus: $(OBJBUS)
-	ar rcs $(NAME) $(OBJBUS)
-
 # Nettoyage des fichiers objets
 clean:
 	rm -f $(OBJ) $(OBJBUS)
