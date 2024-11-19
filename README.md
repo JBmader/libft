@@ -20,6 +20,7 @@ cd libft
 make
 ```
 Cela générera le fichier `libft.a` à la racine du projet.
+
 3. Pour nettoyer les fichiers objets :
 ```bash
 make clean
