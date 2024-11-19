@@ -12,7 +12,7 @@ des chaînes et de la mémoire.
 ## Installation et Compilation
 1. Clonez ce dépôt :
 ```bash
-git clone <URL_DU_DEPOT>
+git clone https://github.com/JBmader/libft
 cd libft
 ```
 2. Compilez la bibliothèque avec le Makefile fourni :
