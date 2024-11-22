@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmader <jmader@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbmader <jbmader@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:58:59 by jmader            #+#    #+#             */
-/*   Updated: 2024/11/08 16:09:06 by jmader           ###   ########.fr       */
+/*   Updated: 2024/11/22 17:14:22 by jbmader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[dlen + i] = '\0';
 	return (dlen + slen);
-}	
+}
